@@ -11,7 +11,7 @@ jobs:
         python-version: ["3.9", "3.10"]
     services:
       postgres:
-        image: postgres:13
+        image: postgres:13.10
         env:
           POSTGRES_USER: kittygram_user
           POSTGRES_PASSWORD: kittygram_password
