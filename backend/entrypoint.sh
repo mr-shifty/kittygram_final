@@ -10,4 +10,4 @@ python manage.py collectstatic
 cp -r /app/collected_static/. /kittygram_backend_static/static/
 
 # Запуск сервера
-exec "$@"
+# exec "$@"
