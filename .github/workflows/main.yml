@@ -12,6 +12,7 @@ jobs:
           python -m pip install --upgrade pip 
           pip install pip-tools
           pip-compile ./backend/requirements.lint.in
+          pip install -r ./backend/requirements.lint.txt
           pip install -r ./backend/requirements.txt
       - name: Test with flake8
         run: |
