@@ -12,6 +12,7 @@ jobs:
           python -m pip install --upgrade pip 
           pip install pip-tools
           pip-compile ./backend/requirements.lint.in
+          pip install ./backend/requiremnets.lint.txt
           pip install -r ./backend/requirements.txt
       - name: Test with flake8
         run: |
@@ -22,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:13
+        image: postgres:13.10
         env:
           POSTGRES_USER: kittygram_user
           POSTGRES_PASSWORD: kittygram_password
