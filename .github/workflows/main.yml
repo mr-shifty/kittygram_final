@@ -67,14 +67,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Save commit SHA
-        run: COMMIT_SHA=$(git rev-parse HEAD)
       - name: Push to DockerHub
         uses: docker/build-push-action@v4
         with:
           context: ./backend/
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/kittygram_backend:${COMMIT_SHA}
+          tags: ${{ secrets.DOCKER_USERNAME }}/kittygram_backend:${{ git rev-parse HEAD }}
 
   frontend_tests:
     runs-on: ubuntu-latest
