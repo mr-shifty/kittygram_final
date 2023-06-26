@@ -13,8 +13,8 @@ services:
       - pg_data:/var/lib/postgresql/data
   backend:
     image: mrshifty/kittygram_backend
-    command: /usr/bin/entrypoint.sh
     env_file: .env
+    entrypoint: /usr/bin/entrypoint.sh
     depends_on:
       - db
     volumes:

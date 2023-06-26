@@ -8,7 +8,7 @@ COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt --no-cache-dir
 RUN chmod +x /usr/bin/entrypoint.sh
-ENTRYPOINT ["/usr/bin/entrypoint.sh"]
+# ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
 COPY . .
 
